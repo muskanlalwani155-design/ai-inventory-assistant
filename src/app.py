@@ -17,7 +17,7 @@ def summarize_data(user_question: str, query: str, data: list) -> str:
     Keep the tone polite and clear.
 """
     response = client.models.generate_content(
-        model="gemini-3.6-flash",
+        model="gemini-2.5-flash",
         contents=prompt
     )
     return response.text.strip()
