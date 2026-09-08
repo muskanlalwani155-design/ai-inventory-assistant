@@ -96,7 +96,7 @@ if prompt := st.chat_input("Ask a question (e.g., 'Show the top 3 most expensive
                             Provide a concise, direct 1-2 sentence business response answering the question using this data.
                             """
                             summary_res = client.models.generate_content(
-                                model="gemini-3.6-flash",
+                                model="gemini-2.5-flash",
                                 contents=summary_prompt
                             )
                             summary_text = summary_res.text.strip()
