@@ -4,7 +4,7 @@ An intelligent full-stack conversational analytics dashboard that translates nat
 
 ---
 
-**Live Application:** [View Live Streamlit Demo](https://muskanlalwani155-design-ai-inventory-assistant.streamlit.app/)  
+**Live Application:** [View Live Streamlit Demo](https://ai-inventory-assistant-rqunq7appvtpmfr2pdvbspc.streamlit.app)  
 **Source Code:** [GitHub Repository](https://github.com/muskanlalwani155-design/ai-inventory-assistant)
 
 ---
