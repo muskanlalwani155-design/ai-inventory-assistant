@@ -6,14 +6,23 @@ load_dotenv()
 
 def get_db_connection():
     try:
-        connection = mysql.connector.connect(
-            host=os.getenv("DB_HOST", "localhost"),
-            port=int(os.getenv("DB_PORT", 3307)),
-            user=os.getenv("DB_USER", "root"),  
-            password=os.getenv("DB_PASSWORD", "root123"),
-            database=os.getenv("DB_NAME", "inventory_db")
-        )
-        return connection
+        host = os.getenv("DB_HOST", "localhost")
+        config = {
+            "host": host,
+            "port": int(os.getenv("DB_PORT", 3307)),
+            "user": os.getenv("DB_USER", "root"),
+            "password": os.getenv("DB_PASSWORD", "root123"),
+            "database": os.getenv("DB_NAME", "inventory_db"),
+        }
+
+        
+        if host != "localhost":
+            ca_path = "/etc/ssl/certs/ca-certificates.crt"
+            if os.path.exists(ca_path):
+                config["ssl_ca"] = ca_path
+            config["ssl_verify_cert"] = True
+
+        return mysql.connector.connect(**config)
     except mysql.connector.Error as err:
         print(f"Database Connection Error: {err}")
         return None
